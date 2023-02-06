@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/groupchat.css" />
+    <title>Group Chat</title>
+  </head>
+
+  <body>
+
+    <header class="chat-container">
+      
+       <header class="chat-header">
+      {{#if Gname}}
+         <h1>{{Gname}}</h1>
+      {{/if}}
+      </header>
+
+      {{#if groupId}}
+      <p hidden>{{groupId}}</p>
+      {{/if}}
+
+      <main class="chat-main">
+        <div class="chat-messages">
+          
+            {{#each resolve}}
+            <div class="message">
+            <h5 class="meta">{{this.name}}:{{this.message}}</h5>
+            </div>
+            {{/each}}
+         
+        </div>
+      </main>
+
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off"/>
+          <button class="btn"> Send</button>
+        </form>
+      </div>
+
+    </div>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/script/main.js"></script>
+  </body>
+</html>

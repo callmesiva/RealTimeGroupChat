@@ -1,0 +1,22 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	background: var(--light-color);
+	margin: 20px;
+}
+
+.chat-messages {
+	padding: 10px; 
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
+}

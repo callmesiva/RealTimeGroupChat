@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/css/home.css" />
+    <title>CreateGroup</title>
+</head>
+<body>
+    <div class="wrapper">
+    
+    <div id="title">
+     <h3> Create New Group</h3>
+    </div>
+
+     <form method="post" action="/adduserspage">
+         <input id="groupname" type="text" name="groupname" placeholder="Groupname" required>
+         <button>submit</button>
+    </form>
+
+
+    <div id="groupname">
+     {{#each userValues}}
+    <li>{{this.name}}<a id="edit" href="/addusertogroup/{{this.groupId}}/{{this.id}}">Add</a></li>
+    {{/each}}
+    </div>
+  
+   
+    <div id="homebtn">
+        <a href="/home"><button>Home</button></a>
+    </div>
+ 
+       
+
+    </div>
+   
+
+</body>
+</html>
